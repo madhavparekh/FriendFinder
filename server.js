@@ -1,14 +1,28 @@
 var express = require('express');
-var expHandles = require('express-handlebars');
+var exphbs = require('express-handlebars');
 var mySQL = require('mysql');
+var bodyParser = require('body-parser');
+var path = require('path');
 
-//mysql
-var connection = require('./dbConnection');
+var htmlRoutes = require('./app/routing/htmlRoutes');
+var apiRoutes = require('./app/routing/apiRoutes');
 
-connection.connect((err) => {
-  if (err) console.log(err);
+var app = express();
+var PORT = process.env.PORT || 3000;
 
-  connection.query('select * from profiles', (err, res, fls)=>{
-    console.log(res);
-  });
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// Sets up the Express app to handle data parsing
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use('/', htmlRoutes);
+
+app.use('/api', apiRoutes);
+
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log('App listening on PORT ' + PORT);
 });
