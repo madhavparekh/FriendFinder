@@ -24,31 +24,23 @@
             </p>
         </div>
         <div>
-            <div class="row border border-primary p-2">
-                <div class="col-sm-8">
-                    <strong>Q1 - Pizza is your go to food!</strong>
+            <form action="/api/friends" method="POST">
+                <div class="form-group row border border-primary mx-4 my-2 p-2 align-items-center">
+                    <div class="col-sm-8">
+                        <strong>Q1 - Pizza is your go to food!</strong>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="q1">
+                            <option>1 - Extremly Unlikely</option>
+                            <option>2 - Unlikely</option>
+                            <option>3 - Maybe</option>
+                            <option>4 - Likely</option>
+                            <option>5 - Extremly likely</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                    <select id="q1">
-                        <option>1 - Extremly Unlikely </option>
-                        <option>2 - Unlikely</option>
-                        <option>3 - Maybe</option>
-                        <option>4 - Likely</option>
-                        <option>5 - Extremly likely </option>
-                    </select>
-                </div>
-            </div>
-            
-            <div>
-                <strong>Q2 - You would make any excuse to go on a bike ride!</strong>
-                <select>
-                    <option>1 - Extremly Unlikely </option>
-                    <option>2 - Unlikely</option>
-                    <option>3 - Maybe</option>
-                    <option>4 - Likely</option>
-                    <option>5 - Extremly likely </option>
-                </select>
-            </div>
+                <button type="button" class="btn btn-primary mx-4 my-2 p-2">Submit</button>
+            </form>
         </div>
     </div>
 
