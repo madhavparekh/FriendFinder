@@ -19,4 +19,9 @@ router.get('/friends', (req, res) => {
   res.send(data);
 });
 
+router.post('/friends', (req, res) => {
+  console.log(req.body);
+  res.send('hello');
+});
+
 module.exports = router;
