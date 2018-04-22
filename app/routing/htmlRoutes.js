@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var questions = require('../data/surveyQues');
 
 var router = express.Router();
 
@@ -9,7 +10,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/survey', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/survey.html'));
+  res.render('survey', {
+    questions: questions,
+  });
 });
 
 module.exports = router;
