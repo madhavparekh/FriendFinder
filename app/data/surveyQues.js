@@ -14,7 +14,7 @@ var suveyQues = [
   },
   {
     q:
-      'You would stuff yourself @ dinner so you have an excuse to go on long ride the next day to burn of excess calories!',
+      'You would stuff yourself @ dinner so you have an excuse to go on long ride the next day to burn off excess calories!',
     id: 4,
   },
   {
@@ -47,3 +47,5 @@ var suveyQues = [
     id: 10,
   },
 ];
+
+module.exports = suveyQues;
