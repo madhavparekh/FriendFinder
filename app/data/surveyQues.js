@@ -1,6 +1,6 @@
 var suveyQues = [
   {
-    q: 'Pizza is your go to food!',
+    q: 'The only social media you are "ACTIVE" (figuratively and literally) on is Strava!',
     id: 1,
   },
   {
