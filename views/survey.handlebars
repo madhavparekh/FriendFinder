@@ -1,53 +1,43 @@
 <div class="w-75 m-auto">
-    <div class="jumbotron text-center p-0">
-        <h1 class="display-3">Friend Finder</h1>
-        <p class="lead">Find your next BFF by simply answering 10 questions</p>
-        <hr class="my-2">
-        <p class="lead p-3">
-            <a class="btn btn-light btn-lg" role="button">Take Survey</a>
-            <a class="btn btn-primary btn-lg" href="/api/friends" role="button">Current Members</a>
-        </p>
-    </div>
-    <div>
-        <form class="was-validated" action="/api/friends" method="post">
-            <div class="form-group row bg-secondary mx-4 my-2 p-2 align-items-center">
-                <div class="col-sm-2">
-                    <strong>Name</strong>
-                </div>
-                <div class="col-sm-10">
-                    <input type="text" name="name" class="form-control" placeholder="John or Jane Doe" required>
-                </div>
-                <div class="invalid-feedback">Must enter your name</div>
+    <form class="was-validated" action="/api/friends" method="post">
+        <div class="form-group row bg-secondary mx-4 my-2 p-2 align-items-center">
+            <div class="col-sm-2">
+                <strong>Name</strong>
             </div>
+            <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" placeholder="John or Jane Doe" required>
+            </div>
+            <div class="invalid-feedback">Must enter your name</div>
+        </div>
 
-            <div class="form-group row bg-secondary mx-4 my-2 p-2 align-items-center">
-                <div class="col-sm-2">
-                    <strong>Your Picture URL</strong>
-                </div>
-                <div class="col-sm-10">
-                    <input type="url" name="picURL" class="form-control" placeholder="http://www.xyz.com/johndoe.png" required>
-                </div>
-                <div class="invalid-feedback">Must enter URL to your picture</div>
+        <div class="form-group row bg-secondary mx-4 my-2 p-2 align-items-center">
+            <div class="col-sm-2">
+                <strong>Your Picture URL</strong>
             </div>
-            {{#each questions}}
-            <div class="form-group row border border-primary mx-4 my-2 p-2 align-items-center">
-                <div class="col-sm-8">
-                    <strong>{{id}} - {{q}}</strong>
-                </div>
-                <div class="col-sm-4 form-input">
-                    <select class="custom-select" name="q{{id}}" required>
-                        <option value="">Pick One</option>
-                        <option value="1">1 - Extremly Unlikely</option>
-                        <option value="2">2 - Unlikely</option>
-                        <option value="3">3 - Maybe</option>
-                        <option value="4">4 - Likely</option>
-                        <option value="5">5 - Extremly likely</option>
-                    </select>
-                    <div class="invalid-feedback">Must pick one</div>
-                </div>
+            <div class="col-sm-10">
+                <input type="url" name="picURL" class="form-control" placeholder="http://www.xyz.com/johndoe.png" required>
             </div>
-            {{/each}}
+            <div class="invalid-feedback">Must enter URL to your picture</div>
+        </div>
+        {{#each questions}}
+        <div class="form-group row border border-primary mx-4 my-2 p-2 align-items-center">
+            <div class="col-sm-8">
+                <strong>{{id}} - {{q}}</strong>
+            </div>
+            <div class="col-sm-4 form-input">
+                <select class="custom-select" name="q{{id}}" required>
+                    <option value="">Pick One</option>
+                    <option value="1">1 - Extremly Unlikely</option>
+                    <option value="2">2 - Unlikely</option>
+                    <option value="3">3 - Maybe</option>
+                    <option value="4">4 - Likely</option>
+                    <option value="5">5 - Extremly likely</option>
+                </select>
+                <div class="invalid-feedback">Must pick one</div>
+            </div>
+        </div>
+        {{/each}}
 
-            <button type="submit" class="btn btn-primary mx-4 my-2 p-2">Submit</button>
-        </form>
-    </div>
+        <button type="submit" class="btn btn-primary mx-4 my-2 p-2">Submit</button>
+    </form>
+</div>
