@@ -5,7 +5,7 @@
                 <strong>Name</strong>
             </div>
             <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" placeholder="John or Jane Doe" required>
+                <input type="text" name="name" class="form-control" placeholder="John or Jane Doe" minlength="2" maxlength="30" required>
             </div>
             <div class="invalid-feedback">Must enter your name</div>
         </div>
@@ -15,7 +15,8 @@
                 <strong>Your Picture URL</strong>
             </div>
             <div class="col-sm-10">
-                <input type="url" name="picURL" class="form-control" placeholder="http://www.xyz.com/johndoe.png" required>
+                <input type="url" name="picURL" class="form-control" placeholder="http://www.xyz.com/johndoe.png" pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"
+                    required minlength="10" maxlength="500">
             </div>
             <div class="invalid-feedback">Must enter URL to your picture</div>
         </div>
