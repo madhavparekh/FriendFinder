@@ -10,16 +10,37 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+
 </head>
 
 <body>
-    {{{body}}}
+    <div>
+        <div class="jumbotron text-center w-75 m-auto p-0">
+            <h1 class="display-3">Friend Finder</h1>
+            <p class="lead">Find your next BFF by simply answering 10 questions</p>
+            <hr class="my-2">
+            <p class="lead p-3">
+                <a class="btn btn-primary btn-lg" href="/survey" role="button">Take Survey</a>
+            </p>
+        </div>
+
+        {{{body}}}
+
+        <div class="container text-center p-5">
+            <a href="/api/friends" class="badge badge-dark">API</a>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#myModal').modal('show');
+        });
+    </script>
 
 </body>
 
