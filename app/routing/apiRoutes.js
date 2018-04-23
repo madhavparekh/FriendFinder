@@ -21,8 +21,7 @@ router.get('/friends', (req, res) => {
 });
 
 router.post('/friends', (req, res) => {
-  console.log(req.body);
-
+  
   var surveyAns = Object.values(req.body)
     .slice(2)
     .map((e) => {
