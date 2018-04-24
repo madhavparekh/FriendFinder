@@ -1,30 +1,57 @@
-<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-    <div class=" modal-dialog " role="document ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">We found some one for you!!</h3>
+<div>
+    <div class="jumbotron text-center w-75 m-auto p-0">
+        <h1 class="display-3">Friend Finder</h1>
+        <p class="lead">Find your next BFF by simply answering 10 questions</p>
+        <hr class="my-2">
+        <p class="lead p-3">
+            <a class="btn btn-primary btn-lg" href="/survey" role="button">Take Survey</a>
+        </p>
+    </div>
 
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class=" modal-dialog" role="document ">
+            <div class="modal-content">
+                <div class="modal-header m-auto">
+                    <h3 class="modal-title">We found some one for you!!</h3>
+                </div>
+                <div class="m-auto">
+                    <button id="closeBTN" type="button" class="btn btn-dark m-3">Close</button>
+                </div>
             </div>
-            <div class="modal-body ">
-                <h5>Check out</h5>
-            </div>
-
         </div>
+    </div>
+    <div class="m-auto w-75 d-flex justify-content-around ">
+        <div class="card m-2" style="width: 18rem; ">
+            <img class="card-img-top " src="{{newURL}} " alt="you ">
+            <div class="card-body text-center ">
+                <h5 class="card-title ">YOU</h5>
+                <p class="card-text ">Name: {{newName}}</p>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 18rem; ">
+            <img class="card-img-top " src="{{bffURL}} " alt="bff ">
+            <div class="card-body text-center">
+                <h5 class="card-title ">Your BFF</h5>
+                <p class="card-text ">Name: {{bffName}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center p-5">
+        <a href="/api/friends" class="badge badge-dark">API</a>
     </div>
 </div>
-<div class="m-auto w-75 d-flex justify-content-around ">
-    <div class="card m-2" style="width: 18rem; ">
-        <img class="card-img-top " src="{{newURL}} " alt="you ">
-        <div class="card-body text-center ">
-            <h5 class="card-title ">YOU</h5>
-            <p class="card-text ">Name: {{newName}}</p>
-        </div>
-    </div>
-    <div class="card m-2" style="width: 18rem; ">
-        <img class="card-img-top " src="{{bffURL}} " alt="bff ">
-        <div class="card-body text-center">
-            <h5 class="card-title ">Your BFF</h5>
-            <p class="card-text ">Name: {{bffName}}</p>
-        </div>
-    </div>
-</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(window).on('load', function () {
+        $('#myModal').modal('show');
+    });
+    $('#closeBTN').on('click', function () {
+        $('#myModal').modal('hide');
+    });
+</script>
